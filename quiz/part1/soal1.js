@@ -21,19 +21,36 @@
 
 let nama = prompt("Masukan nama anda!");
 // jika nama kosong
-if (nama === "") {
-  console.log("nama wajib di isi!");
-} else {
-  alert(`Selamat datang di Game Proxytia, ${nama}`);
-
-  let peran = prompt("Masukkan peran  anda (Kstaria, Tabib, Penyihir)");
-  // jika peran kosong
-  if (peran === "") {
-    console.log("Pilih Peranmu untuk memulai game");
-  } else if (peran !== "Ksatria" && peran !== "Tabib" && peran !== "Penyihir") {
-    alert(`Hallo ${nama}, kayaknya kamu jadi bot aja ya, peran yang kamu pilih ga ada`);
+while (true) {
+  if (nama === "") {
+    console.log("nama wajib di isi!");
+    nama = prompt("Masukan nama anda!");
   } else {
-    alert(`halo ${peran} ${nama}, kamu dapat menyerang dengan senjatamu!`);
+    alert(`Selamat datang di Game Proxytia, ${nama}`);
+    break;
+  }
+}
+
+let peran = prompt("Masukkan peran anda (Kstaria, Tabib, Penyihir)");
+// jika peran kosong
+while (true) {
+  if (peran === "") {
+    alert("Pilih Peranmu untuk memulai game");
+    peran = prompt("Kamu harus pilih Peranmu untuk memulai game");
+  } else if (peran === "Ksatria") {
+    alert(`Halo ${peran} ${nama}, kamu dapat menyerang dengan senjatamu!`);
+    break;
+  } else if (peran === "Tabib") {
+    alert(`Halo ${peran} ${nama}, kamu akan membantu temanmu yang terluka`);
+    break;
+  } else if (peran === "Penyihir") {
+    alert(
+      `Halo ${peran} ${nama}, ciptakan keajaiban yang membantu kemenanganmu!`
+    );
+    break;
+  } else {
+    alert(`tapi kayaknya kamu jadi bot aja ya, peran yang kamu pilih ga ada`);
+    break;
   }
 }
 //code disini gunakan console.log untuk outputnya
